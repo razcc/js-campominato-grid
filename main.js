@@ -12,7 +12,7 @@ function play() {
     const griglia = document.getElementById("areaDiGioco");
 
     for (let i = 0; i < 100; i++) {
-        let numeroQuadrato;
+        
         // Creazione del quadrato
         let activeElement = creazioneQaudrato(i + 1);
 
@@ -20,8 +20,9 @@ function play() {
         activeElement.addEventListener('click', function () {
             this.classList.toggle('quadratoSelezionato');
 
-            numeroQuadrato = document.getElementsByClassName("quadratoSelezionato").innerText;
-            console.log(numeroQuadrato);
+            let numeroCliccato = this.innerText;
+            
+            console.log(numeroCliccato);
 
         })
         
