@@ -1,4 +1,4 @@
-let controllo = false;
+
 
 function creazioneQaudrato(x) {
     const div = document.createElement("div");
@@ -8,21 +8,26 @@ function creazioneQaudrato(x) {
 }
 
 function play() {
-    controllo = true;
+
     const griglia = document.getElementById("areaDiGioco");
 
     for (let i = 0; i < 100; i++) {
-
+        let numeroQuadrato;
         // Creazione del quadrato
-        let activeElement = creazioneQaudrato(i+1);
+        let activeElement = creazioneQaudrato(i + 1);
 
         // Rendo il quadrato cliccabile aggiungendogli la classe
         activeElement.addEventListener('click', function () {
             this.classList.toggle('quadratoSelezionato');
+
+            numeroQuadrato = document.getElementsByClassName("quadratoSelezionato").innerText;
+            console.log(numeroQuadrato);
+
         })
+        
 
         griglia.append(activeElement);
-
     }
+
 
 }
