@@ -1,4 +1,6 @@
-
+.paddingCustom{
+    padding: 180px;
+}
 .quadrato{
     display: flex;
     justify-content: center;
@@ -10,4 +12,22 @@
 
 .quadratoSelezionato{
     background-color: lightcoral;
+}
+
+.quadratoLevelNormal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;   
+    width: calc(100% / 9);
+    aspect-ratio: 1/1;
+}
+
+.quadratoLevelHard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;   
+    width: calc(100% / 7);
+    aspect-ratio: 1/1;
 }
