@@ -1,5 +1,8 @@
+// ^Variabili Globali
+let difficolta;
+let griglia = document.getElementById("areaDiGioco");
 
-
+// ^Funzione per creare quadrato
 function creazioneQaudrato(x) {
     const div = document.createElement("div");
     div.classList.add("quadrato");
@@ -7,37 +10,43 @@ function creazioneQaudrato(x) {
     return div;
 }
 
-let difficolta;
-
 
 
 function play() {
-
+    // ^Input dal select per il tipo di difficolta
     difficolta = document.getElementById("dificultSelection").value;
     console.log(difficolta)
-    const griglia = document.getElementById("areaDiGioco");
 
+    // ^Svuotamento dell'area di gioco
+    griglia.innerHTML = "";
+    
     if (difficolta == "easy") {
+
+        // ^Ciclo per creare il quadrato 100 volte
         for (let i = 0; i < 100; i++) {
 
-            // Creazione del quadrato
+            // ^Richiamo la creazione del quadrato e lo metto in una variabile
             let activeElement = creazioneQaudrato(i + 1);
 
-            // Rendo il quadrato cliccabile aggiungendogli la classe
+            //^Rendo il quadrato creato cliccabile, e aggiungo la classe
             activeElement.addEventListener('click', function () {
+                // *Aggiungo classe
                 this.classList.toggle('quadratoSelezionato');
+
+                // *Metto dentro una variabile il valore del quadrato e lo stampo a console
                 let numeroCliccato = this.innerText;
                 console.log(numeroCliccato);
-
             })
 
-
+            //^ "Appendo" Metto dentro ala variabile griglia il quadrato creato con gia le modifiche al click
             griglia.append(activeElement);
         }
+        
 
     }
     else if (difficolta == "normal") {
 
+        // ^Ciclo per creare il quadrato 81 volte
         for (let i = 0; i < 81; i++) {
 
             // Creazione del quadrato
@@ -61,6 +70,7 @@ function play() {
     }
     else {
 
+        // ^Ciclo per creare il quadrato 49 volte
         for (let i = 0; i < 49; i++) {
 
             // Creazione del quadrato
@@ -86,3 +96,4 @@ function play() {
 
 
 }
+
