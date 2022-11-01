@@ -41,7 +41,7 @@ function play() {
             //^ "Appendo" Metto dentro ala variabile griglia il quadrato creato con gia le modifiche al click
             griglia.append(activeElement);
         }
-        
+        griglia.classList.add("customBorder");
 
     }
     else if (difficolta == "normal") {
